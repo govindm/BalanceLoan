@@ -19,7 +19,7 @@ public class CovenantsRepository {
     public void loadCovenants(Map<Long, Facility> facilities,  Map<Long, Set<Long>> bankToFacilitiesMap) throws AffirmRepositoryException {
         try {
             for (String[] fields : CSVHelper.readFromCsvFile(filename)) {
-                Long facilityId = fields[0] == null ? null : Long.valueOf(fields[0]);
+                Long facilityId = fields[0].isEmpty() ? null : Long.valueOf(fields[0]);
                 Long bankId = Long.valueOf(fields[2]);
                 Float maxDefaultLikelihood = fields[1].isEmpty() ? null : Float.valueOf(fields[1]);
                 String bannedState = fields[3];
