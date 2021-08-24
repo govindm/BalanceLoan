@@ -2,8 +2,9 @@ plugins {
     id 'java'
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+group 'com.affirm'
+version '1.0'
+
 
 repositories {
     mavenCentral()
@@ -19,3 +20,6 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+apply plugin: 'application'
+mainClassName = 'com.affirm.loan.Main'
